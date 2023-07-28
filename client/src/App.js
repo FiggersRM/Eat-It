@@ -1,6 +1,6 @@
 import React from 'react';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import Home from './pages/Home';
+//import Home from './pages/Home';
 import Header from './components/Header';
 
 const client = new ApolloClient({
