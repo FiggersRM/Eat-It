@@ -11,16 +11,22 @@ const restaurantSchema = new Schema({
   },
   address: [
     {
-        type: Schema.Types.ObjectId,
-        ref: "Address"
+      type: Schema.Types.ObjectId,
+      ref: "Address"
     }
   ],
-  menu_items: [
+  menu: [
     {
-        type: Schema.Types.ObjectId,
-        ref: "Menu"
+      type: Schema.Types.ObjectId,
+      ref: "Menu"
     }
   ],
+  manager: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Manager"
+    }
+  ]
 });
 
 const Restaurant = model('Restaurant', restaurantSchema);
