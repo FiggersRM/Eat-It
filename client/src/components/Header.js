@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import bg from "./images/eat-it-high-resolution-logo-color-on-transparent-background.png";
 
 function Header() {
