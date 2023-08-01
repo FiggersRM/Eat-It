@@ -21,5 +21,28 @@ code {
 }
 
 .headerimg {
-  height: 100px;
+  height: 150px;
+  margin-left: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #31C48D;
+}
+
+.navlink {
+  text-decoration: none;
+  color: #31C48D;
+  font-family: 'Biryani';
+  font-size: 150%;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-right: 1px solid gray;
+}
+
+.navlinkend {
+  border-right: none;
 }
