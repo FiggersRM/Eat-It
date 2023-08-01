@@ -46,3 +46,7 @@ code {
 .navlinkend {
   border-right: none;
 }
+
+.navlink:hover {
+  color: gray;
+}
