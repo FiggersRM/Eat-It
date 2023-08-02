@@ -14,7 +14,6 @@ type Restaurant {
     name: String
     address: Address
     menu: Menu
-    manager: Manager
 }
 
 type Menu {
