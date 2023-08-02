@@ -1,4 +1,7 @@
 // import models here
+const { AuthenticationError } = require('apollo-server-express');
+const { User, Menu, Address, Restaurant } = require('../models');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
@@ -21,6 +24,47 @@ const resolvers = {
   },
   Mutation: {
     //add mutations once models are complete and wew decide which mutations we need
+    addUser: async (parent, args) => {
+      const user = await User.create(args);
+      const token = signToken(user)
+
+      return { token, user }
+    },
+    updateUser: async (parent, args, context) => {
+      if (context.user) {
+        return User.findByIdAndUpdate(context.user.id, args, {
+          new: true,
+        })
+      }
+
+      throw new AuthenticationError("Not logged in")
+    },
+    updateMenu: async (parent, { id, price }) => {
+      const decrement = Math.abs(price) * -1
+
+      return Menu.findByIdAndUpdate(
+        id,
+        { $inc: { price: decrement } },
+        { new: true }
+      )
+    },
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw new AuthenticationError("Incorrect credentials")
+      }
+
+      const correctPw = await user.isCorrectPassword(password)
+
+      if (!correctPw) {
+        throw new AuthenticationError("Incorrect credentials")
+      }
+
+      const token = signToken(user)
+
+      return { token, user }
+    }
   }
 };
 

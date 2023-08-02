@@ -2,32 +2,66 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
 type User {
-    //insert User keys here
+    _id: ID
+    username: String
+    email: String
+    address: String
+    role: String!
 }
 
 type Restaurant {
-    //insert Restaurant keys here
+    _id: ID
+    name: String
+    address: Address
+    menu: Menu
+    manager: Manager
 }
 
-type MenuItem {
-    name: String!
-    price: Int!
-    description: String!
+type Menu {
+    _id: ID
+    name: String
+    price: Int
+    description: String
 }
 
 type Address {
-    //insert address keys here
+    _id: ID
+    address: String
+    city: String
+    zipcode: Int
+    restaurant: Restaurant
+}
+
+type Auth {
+    token: ID
+    user: User
 }
 
 type Query {
     user: User
     restaurant: Restaurant
-    menuitem: MenuItem
+    menu: Menu
+    resMenu(resaurant: ID, name: String): [Menu]
     address: Address
 }
 
 type Mutations {
-    // add mutations
+    addUser(
+        username: String!
+        email: String!
+        password: String!
+        address: String!
+        role: String!
+    ): Auth
+    updateUser(
+        username: String
+        email: String
+        password: String
+        address: String!
+        role: String!
+    ): User
+    updatedMenu(_id: ID!, price: Int!): Menu
+    login(email: String!, password: String!): Auth
 }
 `;
 
