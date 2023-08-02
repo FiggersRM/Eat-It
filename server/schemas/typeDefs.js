@@ -44,7 +44,7 @@ type Query {
     address: Address
 }
 
-type Mutations {
+type Mutation {
     addUser(
         username: String!
         email: String!
