@@ -48,5 +48,17 @@ code {
 }
 
 .navlink:hover {
-  color: gray;
+  color: #81dab9;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50;
+  text-align: center;
+}
+
+footer img {
+  width: 5vw;
 }
