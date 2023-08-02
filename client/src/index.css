@@ -30,6 +30,8 @@ code {
   width: 80%;
   padding-bottom: 10px;
   border-bottom: 3px solid #31C48D;
+  margin-bottom: 15px;
+  color: gray;
 }
 
 .navbar {
@@ -58,6 +60,52 @@ code {
 
 .navlink:hover {
   color: #81dab9;
+}
+
+.restCardCont {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.restaurantCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 2px solid #31C48D;
+  width: 14vw;
+  height: 20vh;
+  text-align: center;
+  border-radius: 5px;
+  padding-bottom: 10px;
+}
+
+.restCardLink {
+  font-size: 150%;
+  text-decoration: none;
+  color: gray;
+}
+
+.restCardLink:hover{
+  color: #31C48D
+}
+
+.restCardp {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.restCardBtn {
+  width: 50%;
+  font-size: 125%;
+  border: none;
+  background-color: #81dab9;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.restCardBtn:hover {
+  background-color: #31C48D;
+  transition: .7s;
 }
 
 footer {
