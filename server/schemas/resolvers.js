@@ -14,8 +14,8 @@ const resolvers = {
         return await Restaurant.findOne({ _id: args.id }).populate('menuitems');
     },
     // find one menu item
-    menuitem: async (parent, args) => {
-        return await MenuItems.findOne({ _id: args.id }).populate('restaurant');
+    menu: async (parent, args) => {
+        return await Menu.findOne({ _id: args.id }).populate('restaurant');
     },
     // find one address
     address: async (parent, args) => {

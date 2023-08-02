@@ -59,7 +59,7 @@ type Mutations {
         address: String!
         role: String!
     ): User
-    updatedMenu(_id: ID!, price: Int!): Menu
+    updateMenu(_id: ID!, price: Int!): Menu
     login(email: String!, password: String!): Auth
 }
 `;
