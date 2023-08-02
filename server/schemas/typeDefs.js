@@ -14,7 +14,6 @@ type Restaurant {
     name: String
     address: Address
     menu: Menu
-    manager: Manager
 }
 
 type Menu {
@@ -60,7 +59,7 @@ type Mutations {
         address: String!
         role: String!
     ): User
-    updatedMenu(_id: ID!, price: Int!): Menu
+    updateMenu(_id: ID!, price: Int!): Menu
     login(email: String!, password: String!): Auth
 }
 `;
