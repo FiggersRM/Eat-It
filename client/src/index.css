@@ -138,6 +138,11 @@ code {
   color: gray;
 }
 
+.loginCont {
+  display: flex;
+  justify-content: space-around;
+}
+
 .dashH2 {
   color: gray;
   text-decoration: none;
