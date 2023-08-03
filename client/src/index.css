@@ -143,6 +143,14 @@ code {
   justify-content: space-around;
 }
 
+.loginForm {
+  margin-top: 20px;
+}
+
+.signupForm {
+  margin-top: 20px;
+}
+
 .dashH2 {
   color: gray;
   text-decoration: none;
