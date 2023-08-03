@@ -5,6 +5,7 @@ type User {
     _id: ID
     username: String
     email: String
+    password: String
     address: String
     role: String!
 }
@@ -28,7 +29,6 @@ type Address {
     address: String
     city: String
     zipcode: Int
-    restaurant: Restaurant
 }
 
 type Auth {
