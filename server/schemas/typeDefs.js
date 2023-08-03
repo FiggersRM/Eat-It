@@ -13,7 +13,8 @@ type Restaurant {
     _id: ID
     name: String
     address: Address
-    menu: Menu
+    menu: [Menu]
+    user: User
 }
 
 type Menu {
@@ -39,6 +40,7 @@ type Auth {
 type Query {
     user: User
     restaurant: Restaurant
+    restaurants: [Restaurant]
     menu: Menu
     resMenu(resaurant: ID, name: String): [Menu]
     address: Address

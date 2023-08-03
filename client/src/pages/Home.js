@@ -1,12 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import RestaurantCards from "../components/RestaurantCards"
-
-// import {QUERY_RESTAURANTS} from '../utils/queries';
+import RestaurantCards from "../components/RestaurantCards";
 
 const Home = () => {
-  // const {loading, data} = useQuery(QUERY_RESTAURANTS);
-  //const restaurants = data?.restaurants || [];
 
   return (
     <div>
