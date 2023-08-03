@@ -5,8 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #e2e9c0ff(--cream);
-  accent-color: #ea816fff(--salmon);
+  background-color: #e2e9c0ff;
+  accent-color: #ea816fff;
 }
 
 code {
@@ -16,11 +16,11 @@ code {
 
 .header {
   display: flex;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   padding-bottom: 10px;
   /* border-bottom: 3px solid #31C48D; */
   justify-content: space-evenly;
-  background-color: #ea816fff;
+  background-color: #d5d887ff;
 }
 
 .headerimg {
@@ -28,22 +28,29 @@ code {
 }
 
 .homeHeader {
+  font-family: 'Fira Sans', sans-serif;
+  color: #073b3a;
+  position: absolute;
   text-align: center;
-  margin: auto;
-  width: 80%;
+  margin: 0 auto;
+  width: 100%;
   padding-bottom: 10px;
   border-bottom: 3px solid #31C48D;
+  background-color: #FAC0B6;
 }
 
 .navbar {
+  position: inherit;
   display: flex;
   justify-content: center;
-  margin-top: 10px;
-  padding-bottom: 10px;
+  /*margin-top: 10px;*/
+  /* padding-bottom: 10px; */
   border-bottom: 3px solid #31C48D;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   margin-right: 25px;
-  background-color: #E0C879;
+  width: 100%;
+  background-color: #d5d887ff;
+  /* font-family: 'Fira Sans', sans-serif;*/
 }
 
 .navlink {
@@ -54,12 +61,12 @@ code {
   padding-left: 20px;
   padding-right: 20px;
   border-right: 1px solid gray;
-  background-color: #E0C879;
+  background-color: #D5D887;
 }
 
 .navlinkend {
   border-right: none;
-  background-color: #E0C879;
+  background-color: #D5D887;
 }
 
 .navlink:hover {
@@ -73,7 +80,8 @@ footer {
   left: 50;
   text-align: center;
   background-color: #d5d887ff;
-  color:#31C48D
+  color:#31C48D;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 footer img {
