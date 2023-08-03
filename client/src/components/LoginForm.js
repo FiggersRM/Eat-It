@@ -56,8 +56,8 @@ const LoginForm = () => {
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your login credentials!
         </Alert>
-        <Form.Group className='mb-3'>
-          <Form.Label htmlFor='email'>Email</Form.Label>
+        <Form.Group className='mb-3 formInput'>
+          <Form.Label htmlFor='email' className="inputLabel">Email:</Form.Label>
           <Form.Control
             type='text'
             placeholder='Your email'
@@ -65,12 +65,13 @@ const LoginForm = () => {
             onChange={handleInputChange}
             value={userFormData.email}
             required
+            className="inputBox"
           />
           <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group className='mb-3'>
-          <Form.Label htmlFor='password'>Password</Form.Label>
+          <Form.Label htmlFor='password' className="inputLabel">Password:</Form.Label>
           <Form.Control
             type='password'
             placeholder='Your password'
@@ -78,13 +79,15 @@ const LoginForm = () => {
             onChange={handleInputChange}
             value={userFormData.password}
             required
+            className="inputBox"
           />
           <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
         </Form.Group>
         <Button
           disabled={!(userFormData.email && userFormData.password)}
           type='submit'
-          variant='success'>
+          variant='success'
+          className="submitBtn">
           Submit
         </Button>
       </Form>
