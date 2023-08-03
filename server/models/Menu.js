@@ -13,13 +13,7 @@ const menuSchema = new Schema({
   description: {
     type: String,
     required: true,
-  },
-  restaurant: [
-    {
-        type: Schema.Types.ObjectId,
-        ref: "Restaurant"
-    }
-]
+  }
 });
 
 const Menu = model('Menu', menuSchema);
