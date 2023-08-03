@@ -160,10 +160,41 @@ code {
 
 .loginForm {
   margin-top: 20px;
+  text-align: center;
+}
+
+.formInput {
+  padding: 10px;
+}
+
+.inputLabel {
+  margin-right: 10px;
+}
+
+.inputBox {
+  border: 3px solid #31C48D;
+  border-radius: 5px;
+  height: 20px;
+}
+
+.submitBtn {
+  margin-top: 10px;
+  height: 30px;
+  width: 50%;
+  background-color:#31C48D;
+  color: black;
+  border-radius: 5px;
+}
+
+.submitBtn:hover {
+  background-color: #81dab9;
+  transition: .7s;
+  cursor: pointer;
 }
 
 .signupForm {
   margin-top: 20px;
+  text-align: center;
 }
 
 .dashH2 {

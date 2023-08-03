@@ -62,7 +62,7 @@ const SignupForm = () => {
         </Alert>
 
         <Form.Group className='mb-3'>
-          <Form.Label htmlFor='username'>Username</Form.Label>
+          <Form.Label htmlFor='username' className="inputLabel">Username:</Form.Label>
           <Form.Control
             type='text'
             placeholder='Your username'
@@ -70,12 +70,13 @@ const SignupForm = () => {
             onChange={handleInputChange}
             value={userFormData.username}
             required
+            className="inputBox"
           />
           <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group className='mb-3'>
-          <Form.Label htmlFor='email'>Email</Form.Label>
+          <Form.Label htmlFor='email' className="inputLabel">Email:</Form.Label>
           <Form.Control
             type='email'
             placeholder='Your email address'
@@ -83,12 +84,13 @@ const SignupForm = () => {
             onChange={handleInputChange}
             value={userFormData.email}
             required
+            className="inputBox"
           />
           <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group className='mb-3'>
-          <Form.Label htmlFor='password'>Password</Form.Label>
+          <Form.Label htmlFor='password'className="inputLabel">Password:</Form.Label>
           <Form.Control
             type='password'
             placeholder='Your password'
@@ -96,13 +98,15 @@ const SignupForm = () => {
             onChange={handleInputChange}
             value={userFormData.password}
             required
+            className="inputBox"
           />
           <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
         </Form.Group>
         <Button
           disabled={!(userFormData.username && userFormData.email && userFormData.password)}
           type='submit'
-          variant='success'>
+          variant='success'
+          className="submitBtn">
           Submit
         </Button>
       </Form>
