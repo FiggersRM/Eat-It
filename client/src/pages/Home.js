@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
+import RestaurantCards from "../components/RestaurantCards";
 
-function Home() {
+const Home = () => {
+
   return (
     <div>
-        <h1 className="homeHeader">Restaurants</h1>
-        {/*map through restaurant array*/}
-        {/* .map((restaurant) => {
-            
-            }*/}
+      <h1 className="homeHeader">Restaurants</h1>
+      <RestaurantCards />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

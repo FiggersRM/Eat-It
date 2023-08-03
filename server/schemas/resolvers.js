@@ -9,13 +9,17 @@ const resolvers = {
     user: async (parent, args) => {
       return await User.findOne({ _id: args.id });
     },
+    // find all restaurants
+    restaurants: async (parents, args) => {
+      return await Restaurant.find({}).populate('menu')
+    },
     //find one restaurant
     restaurant: async (parent, args) => {
-        return await Restaurant.findOne({ _id: args.id }).populate('menuitems');
+        return await Restaurant.findOne({ _id: args.id }).populate('menu');
     },
     // find one menu item
-    menuitem: async (parent, args) => {
-        return await MenuItems.findOne({ _id: args.id }).populate('restaurant');
+    menu: async (parent, args) => {
+        return await Menu.findOne({ _id: args.id }).populate('restaurant');
     },
     // find one address
     address: async (parent, args) => {

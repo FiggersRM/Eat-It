@@ -5,6 +5,7 @@ type User {
     _id: ID
     username: String
     email: String
+    password: String
     address: String
     role: String!
 }
@@ -13,8 +14,8 @@ type Restaurant {
     _id: ID
     name: String
     address: Address
-    menu: Menu
-    manager: Manager
+    menu: [Menu]
+    user: User
 }
 
 type Menu {
@@ -29,7 +30,6 @@ type Address {
     address: String
     city: String
     zipcode: Int
-    restaurant: Restaurant
 }
 
 type Auth {
@@ -40,12 +40,13 @@ type Auth {
 type Query {
     user: User
     restaurant: Restaurant
+    restaurants: [Restaurant]
     menu: Menu
     resMenu(resaurant: ID, name: String): [Menu]
     address: Address
 }
 
-type Mutations {
+type Mutation {
     addUser(
         username: String!
         email: String!
@@ -60,7 +61,7 @@ type Mutations {
         address: String!
         role: String!
     ): User
-    updatedMenu(_id: ID!, price: Int!): Menu
+    updateMenu(_id: ID!, price: Int!): Menu
     login(email: String!, password: String!): Auth
 }
 `;

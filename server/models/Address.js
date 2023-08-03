@@ -1,6 +1,4 @@
 const { Schema, model } = require('mongoose');
-const Restaurant = require("./Restaurant")
-const Menu = require("./Menu")
 
 const addressSchema = new Schema({
     address: {
@@ -18,13 +16,7 @@ const addressSchema = new Schema({
         type: Number,
         required: true,
         trim: true
-    },
-    restaurant: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Restaurant"
-        }
-    ]
+    }
 });
 
 const Address = model('Address', addressSchema);

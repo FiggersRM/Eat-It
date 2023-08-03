@@ -5,7 +5,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Home from "./pages/Home"
+import Dashboard from "./pages/Dashboard";
+import Home from "./pages/Home";
+import Login from "./pages/Login"
 // import M from 'materialize-css';
 
 const client = new ApolloClient({
@@ -16,12 +18,27 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <Header />
-        <Navbar />
-        <Home />
-        <Footer />
-      </Router>
+      <div className="appCont">
+        <Router>
+          <Header />
+          <Navbar />
+          <Routes>
+            <Route
+            path='/'
+            element={<Home />}
+            />
+            <Route 
+            path='/dashboard'
+            element={<Dashboard />}
+            />
+            <Route
+            path='/login'
+            element={<Login />}
+            />
+          </Routes>
+          <Footer />
+        </Router>
+      </div>
     </ApolloProvider>
   );
 }
