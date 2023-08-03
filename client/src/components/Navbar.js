@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <div class="navbar">
       {loggedIn ? (
-        <div classNme="navlink">Log Out</div>
+        <div className="navlink">Log Out</div>
       ) : (
         <Link to="/login" className="navlink">
           Login/Signup

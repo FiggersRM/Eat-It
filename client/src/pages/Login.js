@@ -4,7 +4,7 @@ import SignupForm from '../components/SignupForm';
 
 function Login() {
   return (
-    <div>
+    <div className="loginCont">
         <LoginForm />
         <SignupForm />
     </div>
