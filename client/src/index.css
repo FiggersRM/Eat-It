@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e2e9c0ff;
+  accent-color: #ea816fff;
 }
 
 code {
@@ -14,10 +16,11 @@ code {
 
 .header {
   display: flex;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   padding-bottom: 10px;
   /* border-bottom: 3px solid #31C48D; */
   justify-content: space-evenly;
+  background-color: #d5d887ff;
 }
 
 .headerimg {
@@ -25,11 +28,15 @@ code {
 }
 
 .homeHeader {
+  font-family: 'Fira Sans', sans-serif;
+  color: #073b3a;
+  position: absolute;
   text-align: center;
-  margin: auto;
-  width: 80%;
+  margin: 0 auto;
+  width: 100%;
   padding-bottom: 10px;
   border-bottom: 3px solid #31C48D;
+  background-color: #FAC0B6;
   margin-bottom: 15px;
   color: gray;
 }
@@ -37,14 +44,20 @@ code {
 
 
 .navbar {
+  position: inherit;
   display: flex;
   justify-content: center;
+  /*margin-top: 10px;*/
+  /* padding-bottom: 10px; */
   margin-top: 10px;
   padding-bottom: 10px;
   width: 100vw;
   border-bottom: 3px solid #31C48D;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   margin-right: 25px;
+  width: 100%;
+  background-color: #d5d887ff;
+  /* font-family: 'Fira Sans', sans-serif;*/
 }
 
 .navlink {
@@ -55,14 +68,16 @@ code {
   padding-left: 20px;
   padding-right: 20px;
   border-right: 1px solid gray;
+  background-color: #D5D887;
 }
 
 .navlinkend {
   border-right: none;
+  background-color: #D5D887;
 }
 
 .navlink:hover {
-  color: #81dab9;
+  color: #ea816fff;
 }
 
 .restCardCont {
@@ -160,12 +175,23 @@ code {
   bottom: 0;
   left: 50;
   text-align: center;
+  background-color: #d5d887ff;
+  color:#31C48D;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 .footer img {
   width: 5vw;
 }
 
+
+
+/*--mantis: #7ac74fff;
+--pistachio: #a1cf6bff;
+--straw: #d5d887ff;
+--citron: #e0c879ff;
+--cream: #e2e9c0ff;
+--salmon: #ea816fff;*/
 @media screen and (max-width: 980px) {
   body,
   header {
