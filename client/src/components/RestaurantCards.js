@@ -10,11 +10,11 @@ function RestaurantCards() {
   //const restaurants = data?.restaurants || [];
 
   return (
+    <div className="restCardCont">
     {/*map through restaurant array
     loading ? (
             <div>Loading...</div>
         ) : restaurants.map((restaurant) =>(
-        <div className="restCardCont">
         <div className="restaurantCard">
         //will have to change route and maybe the a tag to Link
         <a href="restaurant.id" className="restCardLink">
@@ -27,8 +27,8 @@ function RestaurantCards() {
           Order Now
         </HomeBtn>
       </div>
-      </div>
     )*/}
+    </div>
   );
 }
 

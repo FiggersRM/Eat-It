@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 // import M from 'materialize-css';
 
@@ -20,7 +21,8 @@ function App() {
         <Router>
           <Header />
           <Navbar />
-          <Home />
+          {/* <Home /> */}
+          <Dashboard />
           <Footer />
         </Router>
       </div>
