@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
+import Login from "./pages/Login"
 // import M from 'materialize-css';
 
 const client = new ApolloClient({
@@ -21,8 +22,20 @@ function App() {
         <Router>
           <Header />
           <Navbar />
-          {/* <Home /> */}
-          <Dashboard />
+          <Routes>
+            <Route
+            path='/'
+            element={<Home />}
+            />
+            <Route 
+            path='/dashboard'
+            element={<Dashboard />}
+            />
+            <Route
+            path='/login'
+            element={<Login />}
+            />
+          </Routes>
           <Footer />
         </Router>
       </div>
