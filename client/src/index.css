@@ -39,6 +39,7 @@ code {
   justify-content: center;
   margin-top: 10px;
   padding-bottom: 10px;
+  width: 100vw;
   border-bottom: 3px solid #31C48D;
   margin-bottom: 10px;
   margin-right: 25px;
@@ -65,6 +66,7 @@ code {
 .restCardCont {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .restaurantCard {
@@ -72,13 +74,14 @@ code {
   flex-wrap: wrap;
   justify-content: center;
   border: 2px solid #31C48D;
-  width: 14vw;
-  height: 20vh;
+  width: 234px;
+  height: 20%;
   text-align: center;
   border-radius: 5px;
   padding: 5px;
   padding-bottom: 10px;
-  box-shadow: ;
+  /* box-shadow: ; */
+  margin: 10px;
 }
 
 .restCardLink {
@@ -103,6 +106,8 @@ code {
   background-color: #81dab9;
   height: 30px;
   border-radius: 5px;
+  text-decoration: none;
+  color: black;
 }
 
 .restCardBtn:hover {
@@ -111,7 +116,13 @@ code {
   cursor: pointer;
 }
 
-footer {
+.appCont {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 140px;
+}
+
+.footer {
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -119,6 +130,29 @@ footer {
   text-align: center;
 }
 
-footer img {
+.footer img {
   width: 5vw;
+}
+
+@media screen and (max-width: 980px) {
+  body,
+  header {
+    flex-direction: column;
+  }
+
+  .headerimg{
+    margin: auto;
+    height: 150px;
+    width: 25%;
+  }
+
+  .footer {
+
+  }
+
+  h1,
+  nav {
+    flex-direction: column;
+    padding: 20px;
+  }
 }
