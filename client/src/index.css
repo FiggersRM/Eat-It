@@ -218,9 +218,12 @@ code {
   bottom: 0;
   left: 50;
   text-align: center;
-  background-color: #d5d887ff;
+  background-color: rgb(235, 235, 235);
   color:#31C48D;
   font-family: 'Fira Sans', sans-serif;
+  border-top: 3px solid #31C48D;
+  padding-top: 10px;
+
 }
 
 .footer img {
