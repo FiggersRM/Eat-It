@@ -30,7 +30,7 @@ const resolvers = {
     //add mutations once models are complete and wew decide which mutations we need
     addUser: async (parent, args) => {
       const user = await User.create(args);
-      const token = signToken(user)
+      const token = signToken(user);
 
       return { token, user }
     },

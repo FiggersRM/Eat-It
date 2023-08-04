@@ -56,6 +56,7 @@ const LoginForm = () => {
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your login credentials!
         </Alert>
+        <div className="formHeader">Login</div>
         <Form.Group className='mb-3 formInput'>
           <Form.Label htmlFor='email' className="inputLabel">Email:</Form.Label>
           <Form.Control

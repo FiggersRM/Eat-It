@@ -163,6 +163,11 @@ code {
   text-align: center;
 }
 
+.formHeader {
+  font-size: 150%;
+  padding-bottom: 20px;
+}
+
 .formInput {
   padding: 10px;
 }
