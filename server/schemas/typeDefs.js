@@ -7,7 +7,7 @@ type User {
     email: String
     password: String
     address: String
-    role: String!
+    role: String
 }
 
 type Restaurant {
@@ -51,8 +51,8 @@ type Mutation {
         username: String!
         email: String!
         password: String!
-        address: String!
-        role: String!
+        address: String
+        role: String
     ): Auth
     updateUser(
         username: String
