@@ -1,12 +1,14 @@
+*, html {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #e2e9c0ff;
-  accent-color: #ea816fff;
+  background-color: rgb(255, 255, 255);
+  accent-color: rgb(3, 190, 247);
 }
 
 code {
@@ -15,16 +17,18 @@ code {
 }
 
 .header {
+  
   display: flex;
   /* margin-top: 10px; */
-  padding-bottom: 10px;
   /* border-bottom: 3px solid #31C48D; */
-  justify-content: space-evenly;
-  background-color: #d5d887ff;
+  justify-content: space-between !important;
+  background-color: rgb(235, 235, 235);
+  padding: 10px 2rem;
+  border-bottom: 3px solid #31C48D;
 }
 
 .headerimg {
-  height: 150px;
+  height: 4vw;
 }
 
 .homeHeader {
@@ -34,30 +38,27 @@ code {
   text-align: center;
   margin: 0 auto;
   width: 100%;
-  padding-bottom: 10px;
-  border-bottom: 3px solid #31C48D;
-  background-color: #FAC0B6;
+  padding: 10px 0;
+  background-color: #ffffff;
   margin-bottom: 15px;
-  color: gray;
+  color: #31C48D;
 }
 
 
 
 .navbar {
-  position: inherit;
   display: flex;
-  justify-content: center;
   /*margin-top: 10px;*/
   /* padding-bottom: 10px; */
-  margin-top: 10px;
-  padding-bottom: 10px;
-  width: 100vw;
-  border-bottom: 3px solid #31C48D;
+  
   /* margin-bottom: 10px; */
-  margin-right: 25px;
   width: 100%;
-  background-color: #d5d887ff;
   /* font-family: 'Fira Sans', sans-serif;*/
+  align-items: center !important;
+}
+
+.headerNav {
+  display: flex !important;
 }
 
 .navlink {
@@ -65,15 +66,13 @@ code {
   color: #31C48D;
   font-family: 'Biryani';
   font-size: 150%;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 0 20px;
   border-right: 1px solid gray;
-  background-color: #D5D887;
+  height: 35%;
 }
 
 .navlinkend {
   border-right: none;
-  background-color: #D5D887;
 }
 
 .navlink:hover {
