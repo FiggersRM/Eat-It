@@ -38,7 +38,7 @@ type Auth {
 }
 
 type Query {
-    user: User
+    user(userId: ID!): User
     restaurant: Restaurant
     restaurants: [Restaurant]
     menu: Menu
