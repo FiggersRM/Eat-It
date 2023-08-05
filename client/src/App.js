@@ -3,7 +3,6 @@ import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from "@ap
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { setContext } from '@apollo/client/link/context';
 import Header from "./components/Header";
-import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
@@ -34,7 +33,6 @@ function App() {
       <div className="appCont">
         <Router>
           <Header />
-          <Navbar />
           <Routes>
             <Route
             path='/'
