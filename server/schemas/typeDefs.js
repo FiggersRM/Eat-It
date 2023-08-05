@@ -13,7 +13,7 @@ type User {
 type Restaurant {
     _id: ID
     name: String
-    address: Address
+    address: String
     menu: [Menu]
     user: User
 }
@@ -43,7 +43,7 @@ type Query {
     restaurants: [Restaurant]
     menu: Menu
     resMenu(resaurant: ID, name: String): [Menu]
-    address: Address
+    address: String
 }
 
 type Mutation {
