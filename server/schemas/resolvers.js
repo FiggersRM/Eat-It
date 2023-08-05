@@ -6,8 +6,8 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
   Query: {
     // find one user
-    user: async (parent, args) => {
-      return await User.findOne({ _id: args.id });
+    user: async (parent, {userId}) => {
+      return await User.findOne({ _id: userId });
     },
     // find all restaurants
     restaurants: async (parents, args) => {

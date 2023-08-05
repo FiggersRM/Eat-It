@@ -39,7 +39,7 @@ function App() {
             element={<Home />}
             />
             <Route 
-            path='/dashboard'
+            path='/dashboard/:userId'
             element={<Dashboard />}
             />
             <Route

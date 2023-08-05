@@ -156,6 +156,7 @@ code {
   padding-bottom: 10px;
   border-bottom: 3px solid #31C48D;
   color: gray;
+  margin-top: 10px;
 }
 
 .loginCont {
@@ -210,6 +211,22 @@ code {
 .dashH2 {
   color: gray;
   text-decoration: none;
+}
+
+.dashBtn:hover {
+  color: #ea816fff;
+  cursor: pointer;
+}
+
+.dashH2:hover {
+  color: #ea816fff;
+  cursor: pointer;
+}
+
+.dashBtn {
+  border: none;
+  background-color: #ffffff;
+  font-size: 125%;
 }
 
 .appCont {

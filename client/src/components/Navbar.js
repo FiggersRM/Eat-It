@@ -9,13 +9,18 @@ function Navbar() {
 		event.preventDefault();
 		Auth.logout();
 	}
+	let token;
+
+	if (localStorage.getItem('id_token')) {
+		token = Auth.getUser();
+	}
 	return (
 		<div className="navbar">
 			<Link to="/" className="navlink">
 				Home
 			</Link>
 			{loggedIn ? (
-				<Link to="/dashboard" className="navlink">
+				<Link to={`/dashboard/${token.data._id}`} className="navlink">
 					My Dashboard
 				</Link>
 			) : (
