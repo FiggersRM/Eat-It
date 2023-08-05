@@ -5,6 +5,10 @@ import Auth from "../utils/auth";
 
 function Navbar() {
 	const loggedIn = Auth.loggedIn();
+	const handleLogout = (e) => {
+		e.preventDefault();
+		Auth.logout();
+	}
 	return (
 		<div class="navbar">
 			<Link to="/" className="navlink">
@@ -18,7 +22,7 @@ function Navbar() {
 				""
 			)}
 			{loggedIn ? (
-				<div className="navlink navlinkend">Log Out</div>
+				<a href='/' className="navlink navlinkend" onclick={handleLogout()}>Log Out</a>
 			) : (
 				<Link to="/login" className="navlink navlinkend">
 					Login/Signup
