@@ -80,6 +80,11 @@ code {
   cursor: pointer;
 }
 
+.navBtn {
+  border: none;
+  background-color: rgb(235, 235, 235);
+}
+
 .restCardCont {
   display: flex;
   justify-content: space-evenly;
