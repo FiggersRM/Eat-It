@@ -52,6 +52,14 @@ const resolvers = {
         { new: true }
       )
     },
+    addRestaurant: async (parent, args) => {
+      const restaurant = await Restaurant.create(args)
+      return restaurant
+    },
+    addMenu: async (parent, args) => {
+      const menu = await Menu.create(args)
+      return menu
+    },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
