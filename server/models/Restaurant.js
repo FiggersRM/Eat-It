@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const menu = require("./Menu")
 
 const restaurantSchema = new Schema({
   name: {
@@ -12,12 +13,7 @@ const restaurantSchema = new Schema({
     trim: true
   },
   // [{type: Schema.Types.ObjectId, ref: "Address"}],
-  menu: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Menu"
-    }
-  ],
+  menu: [menu.menuSchema],
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User'
