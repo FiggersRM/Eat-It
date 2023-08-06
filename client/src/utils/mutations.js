@@ -23,3 +23,26 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
     }
 }
 `;
+
+export const ADD_RESTAURANT = gql`
+  mutation addRestaurant($name: String!, $address: String!) {
+    addRestaurant($name: String!, $address: String!) {
+      restaurant {
+        name
+        address
+      }
+    }
+  }
+`;
+
+export const ADD_MENU = gql`
+  mutation addMenu($name: String!, $price: Int!, $description: String!) {
+    addMenu(name: $name, price: $price, description: $description) {
+        menu {
+            name
+            price
+            description
+        }
+    }
+  }
+`;
