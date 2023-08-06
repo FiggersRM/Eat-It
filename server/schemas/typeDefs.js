@@ -61,6 +61,16 @@ type Mutation {
         address: String!
         role: String!
     ): User
+    addRestaurant(
+        name: String!
+        address: String
+    ): Restaurant
+    addMenu(
+        restaurantID: ID!
+        name: String!
+        price: Int
+        description: String
+    ): Restaurant
     updateMenu(_id: ID!, price: Int!): Menu
     login(email: String!, password: String!): Auth
 }
