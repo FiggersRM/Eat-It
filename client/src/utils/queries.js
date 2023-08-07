@@ -28,6 +28,7 @@ query restaurant($restaurantId: ID!) {
       name
       description
       price
+      _id
     }
     address
     user {
@@ -37,9 +38,18 @@ query restaurant($restaurantId: ID!) {
 }
 `;
 
-// export const QUERY_USER_RESTAURANT = gql`
-//   query
-// `
+export const QUERY_USER_RESTAURANT = gql`
+  query userRestaurant($userId: ID!) {
+    userRestaurant(userId: $userId) {
+      _id
+      name
+      address
+      user {
+        _id
+      }
+    }
+  }
+`
 
 export const QUERY_SINGLE_USER = gql`
   query singleUser($userId: ID!) {

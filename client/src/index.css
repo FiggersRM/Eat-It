@@ -28,7 +28,7 @@ code {
 }
 
 .headerimg {
-  height: 4vw;
+  height: 100px;
 }
 
 .homeHeader {
@@ -152,7 +152,7 @@ code {
 }
 
 .restCardLink:hover{
-  color: #31C48D
+  color: #ea816fff;
 }
 
 .restCardp {
@@ -167,7 +167,7 @@ code {
   font-size: 125%;
   border: none;
   background-color: #81dab9;
-  height: 30px;
+  height: 25px;
   align-items: center;
   border-radius: 5px;
   text-decoration: none;
@@ -176,6 +176,24 @@ code {
 
 .restCardBtn:hover {
   background-color: #31C48D;
+  transition: .7s;
+  cursor: pointer;
+}
+
+.deleteRestBtn {
+  width: 80%;
+  font-size: 125%;
+  border: none;
+  background-color: #ea816fff;
+  height: 25px;
+  align-items: center;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+.deleteRestBtn:hover {
+  background-color: rgb(255, 169, 154);
   transition: .7s;
   cursor: pointer;
 }
@@ -254,6 +272,25 @@ code {
   border-radius: 5px;
   font-size: 125%;
   border: none;
+  margin-bottom: 20px;
+}
+
+.cancelFormBtn {
+  margin-left: 15px;
+  margin-top: 10px;
+  height: 40px;
+  width: 15%;
+  background-color:#ea816fff;
+  color: black;
+  border-radius: 5px;
+  font-size: 125%;
+  border: none;
+}
+
+.cancelFormBtn:hover {
+  background-color: rgb(255, 169, 154);
+  transition: .7s;
+  cursor: pointer;
 }
 
 .formSubmitBtn:hover {
@@ -306,9 +343,73 @@ code {
   border: none;
 }
 
+.addMenuBtn {
+  width: 10%;
+  font-size: 125%;
+  background-color: #31C48D;
+  border-radius: 5px;
+  height: 50px;
+  border: none;
+  margin-bottom: 20px;
+}
+
 .addRestBtn:hover {
   cursor: pointer;
   background-color: #81dab9;
+}
+
+.addMenuBtn:hover {
+  cursor: pointer;
+  background-color: #81dab9;
+}
+
+.menuItemDiv {
+
+}
+
+.menuCard {
+  display: flex;
+  border: 3px solid #81dab9;
+  border-radius: 5px;
+  height: 50px;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menuName {
+  font-size: 150%;
+  margin-left: 10px;
+  color: gray;
+}
+
+.menuDesc {
+  color: gray
+}
+
+.menuItemDeleteBtn {
+  background-color: #ea816fff;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: none;
+  height: 80%;
+  width: 5%;
+  font-size: 125%;
+  display: flex-end;
+  margin-left: 10px;
+}
+
+.menuItemDeleteBtn:hover{
+  background-color: rgb(255, 169, 154);
+  transition: .7s;
+  cursor: pointer;
+}
+
+.menuPrice {
+  margin-right: 10px;
+  color: gray;
 }
 
 .appCont {
@@ -349,18 +450,20 @@ code {
 --salmon: #ea816fff;*/
 @media screen and (max-width: 980px) {
   body,
-  header {
+  .header {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .headerimg{
     margin: auto;
-    height: 150px;
-    width: 25%;
+    height: 100px;
+    flex-direction: column;
   }
 
   h1,
-  nav {
+  .headerNav {
     flex-direction: column;
     padding: 20px;
   }

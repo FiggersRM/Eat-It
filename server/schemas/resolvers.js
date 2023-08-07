@@ -11,7 +11,6 @@ const resolvers = {
     },
     // find all restaurants
     restaurants: async () => {
-      console.log('here');
       return await Restaurant.find({}).populate('menu');
     },
     //find one restaurant
@@ -20,7 +19,7 @@ const resolvers = {
     },
     // find restaurants associated with one user
     userRestaurant: async (parent, args) => {
-        return await Restaurant.find({ user: args.userId });
+        return await Restaurant.find({ user: args.userId }).populate('menu');
     },
     // find one menu item
     menu: async (parent, args) => {
@@ -48,22 +47,28 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in")
     },
-    updateMenu: async (parent, { id, price }) => {
-      const decrement = Math.abs(price) * -1
-
-      return Menu.findByIdAndUpdate(
-        id,
-        { $inc: { price: decrement } },
-        { new: true }
+    deleteMenu: async (parent, { restaurantId, menuId }) => {
+      const menu = Restaurant.findOneAndUpdate(
+        {_id: restaurantId},
+        {$pull: {menu: {_id: menuId}}},
+        {new: true}
       )
+      return menu;
     },
     addRestaurant: async (parent, {name, address, user}) => {
-      console.log('abc');
       const restaurant = await Restaurant.create({name: name, address, user});
       return restaurant;
     },
-    addMenu: async (parent, args) => {
-      const menu = await Menu.create(args)
+    deleteRestaurant: async (parent, {restaurantId}) => {
+      const restaurant = await Restaurant.deleteOne({_id: restaurantId});
+      return restaurant;
+    },
+    addMenu: async (parent, {restaurantId, name, price, description}) => {
+      const newMenu = {name, price, description}
+      const menu = await Restaurant.findOneAndUpdate(
+        {_id: restaurantId},
+        {$push: {menu: newMenu}},
+        {new: true});
       return menu;
     },
     login: async (parent, { email, password }) => {

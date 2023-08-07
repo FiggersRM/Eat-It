@@ -1,9 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import { ADD_RESTAURANT } from "../utils/mutations";
-// import { QUERY_USER_RESTAURANT } from '../utils/queries';
-import { useParams } from "react-router-dom";
-import { useMutation } from "@apollo/client";
+import { ADD_RESTAURANT, DELETE_RESTAURANT } from "../utils/mutations";
+import { QUERY_USER_RESTAURANT } from '../utils/queries';
+import { useParams, Link } from "react-router-dom";
+import { useMutation, useQuery } from "@apollo/client";
+import HomeBtn from "./HomeBtn";
 
 function MyRestaurants() {
   const { userId } = useParams();
@@ -13,7 +14,26 @@ function MyRestaurants() {
     address: "",
     user: userId,
   });
-  const [addRestaurant, { error }] = useMutation(ADD_RESTAURANT);
+
+  const [addRestaurant, { error }] = useMutation(ADD_RESTAURANT, {
+    refetchQueries: [
+      { query: QUERY_USER_RESTAURANT, variables: {userId: userId}},
+    ]
+  });
+
+  const [deleteRestaurant, {error: deleteError}] = useMutation(DELETE_RESTAURANT, {
+    refetchQueries: [
+      { query: QUERY_USER_RESTAURANT, variables: {userId: userId}},
+    ]
+  });
+
+  const { loading, data } = useQuery(QUERY_USER_RESTAURANT, {
+    variables: {userId: userId}
+  });
+
+  if(data) {
+    console.log(data);
+  }
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -47,6 +67,19 @@ function MyRestaurants() {
     });
   };
 
+  const handleDeleteRestaurant = (restId) => async (event) => {
+    event.preventDefault();
+    console.log(restId);
+    alert('This restaurant will be permanently deleted');
+    try {
+      const { data } = deleteRestaurant({
+        variables: { restaurantId: restId }
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   return (
     <>
       {showForm ? (
@@ -78,6 +111,7 @@ function MyRestaurants() {
             <button className="formSubmitBtn" type="submit">
               Create Restaurant
             </button>
+            <button className="cancelFormBtn" onClick={()=> setShowForm(!showForm)}>Cancel</button>
           </form>
         </div>
       ) : (
@@ -85,6 +119,33 @@ function MyRestaurants() {
           <button className="addRestBtn" onClick={() => setShowForm(!showForm)}>
             Add a Restaurant
           </button>
+        </>
+      )}
+      {loading ? (
+        <div>
+          Loading...
+        </div>
+      ) : (
+        <>
+          <h2 className="dashH2">My Restaurants</h2>
+        <div className="restCardCont">
+          {data.userRestaurant.map((restaurant) => {
+            return (
+              <div className="restaurantCard">
+        <Link to={`/restaurant/${restaurant._id}`} className="restCardLink">
+          {restaurant.name}
+        </Link>
+        <p className="restCardp">
+          {restaurant.address}
+        </p>
+        <HomeBtn as={Link} to={`/restaurant/${restaurant._id}`}>
+          View Restaurant
+        </HomeBtn>
+        <button className="deleteRestBtn" onClick={handleDeleteRestaurant(restaurant._id)}>Delete Restaurant</button>
+      </div>
+          )
+          })}
+        </div>
         </>
       )}
     </>
