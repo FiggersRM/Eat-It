@@ -24,9 +24,9 @@ function RestaurantCards() {
             return (
         <div className="restaurantCard">
         {/* //will have to change route and maybe the a tag to Link */}
-        <a href={restaurant._id} className="restCardLink">
+        <Link to={`/restaurant/${restaurant._id}`} className="restCardLink">
           {restaurant.name}
-        </a>
+        </Link>
         <p className="restCardp">
           {restaurant.address}
         </p>

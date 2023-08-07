@@ -40,10 +40,9 @@ type Auth {
 type Query {
     user(userId: ID!): User
     restaurant(restaurantId: ID!): Restaurant
-    userRestaurant: [Restaurant]
+    userRestaurant(userId: ID!): [Restaurant]
     restaurants: [Restaurant]
     menu: Menu
-    resMenu(restaurant: ID, name: String): [Menu]
     address: String
 }
 
@@ -68,12 +67,13 @@ type Mutation {
         user: ID!
     ): Restaurant
     addMenu(
-        restaurantID: ID!
+        restaurantId: ID!
         name: String!
-        price: Int
-        description: String
+        price: Int!
+        description: String!
     ): Restaurant
-    updateMenu(_id: ID!, price: Int!): Menu
+    deleteRestaurant(restaurantId: ID!) : Restaurant
+    deleteMenu(restaurantId: ID!, menuId: ID!): Menu
     login(email: String!, password: String!): Auth
 }
 `;

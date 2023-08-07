@@ -36,14 +36,35 @@ export const ADD_RESTAURANT = gql`
   }
 `;
 
+export const DELETE_RESTAURANT = gql`
+mutation deleteRestaurant($restaurantId: ID!) {
+  deleteRestaurant(restaurantId: $restaurantId) {
+    name
+    address
+    user {
+      _id
+    }
+  }
+}
+`
+
 export const ADD_MENU = gql`
-  mutation addMenu($name: String!, $price: Int!, $description: String!) {
-    addMenu(name: $name, price: $price, description: $description) {
+  mutation addMenu($restaurantId: ID!, $name: String!, $price: Int!, $description: String!) {
+    addMenu(restaurantId: $restaurantId, name: $name, price: $price, description: $description) {
         menu {
             name
             price
             description
+            _id
         }
     }
   }
 `;
+
+export const DELETE_MENU = gql`
+mutation deleteMenu($restaurantId: ID!, $menuId: ID!) {
+  deleteMenu(restaurantId: $restaurantId, menuId: $menuId) {
+    name
+  }
+}
+`
