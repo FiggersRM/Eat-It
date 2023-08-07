@@ -120,6 +120,7 @@ code {
 .navBtn {
   border: none;
   background-color: rgb(235, 235, 235);
+  padding-bottom: 10px;
 }
 
 .restCardCont {
@@ -252,9 +253,11 @@ code {
   margin-top: 10px;
   height: 30px;
   width: 50%;
+  border: none;
   background-color:#31C48D;
   color: black;
   border-radius: 5px;
+  font-size: 125%
 }
 
 .submitBtn:hover {
@@ -460,6 +463,10 @@ code {
     margin: auto;
     height: 100px;
     flex-direction: column;
+  }
+
+  .navBtn {
+    padding-bottom: 0;
   }
 
   h1,
