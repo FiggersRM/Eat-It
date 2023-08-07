@@ -39,10 +39,11 @@ type Auth {
 
 type Query {
     user(userId: ID!): User
-    restaurant: Restaurant
+    restaurant(restaurantId: ID!): Restaurant
+    userRestaurant: [Restaurant]
     restaurants: [Restaurant]
     menu: Menu
-    resMenu(resaurant: ID, name: String): [Menu]
+    resMenu(restaurant: ID, name: String): [Menu]
     address: String
 }
 

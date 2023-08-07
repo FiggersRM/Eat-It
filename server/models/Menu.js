@@ -4,7 +4,7 @@ const menuSchema = new Schema({
   name: {
     type: String,
     required: true,
-    unique: true,
+    // unique: false
   },
   price: {
     type: Number,
@@ -16,6 +16,6 @@ const menuSchema = new Schema({
   }
 });
 
-const Menu = model('Menu', menuSchema);
+// const Menu = model('Menu', menuSchema);
 
-module.exports = Menu;
+module.exports = menuSchema;

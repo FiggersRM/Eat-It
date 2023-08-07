@@ -1,35 +1,40 @@
 import React from "react";
 import { useState } from "react";
-import { ADD_RESTAURANT } from '../utils/mutations';
+import { ADD_RESTAURANT } from "../utils/mutations";
+// import { QUERY_USER_RESTAURANT } from '../utils/queries';
 import { useParams } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 
 function MyRestaurants() {
+  const { userId } = useParams();
   const [showForm, setShowForm] = useState(false);
   const [formState, setFormState] = useState({
     name: "",
     address: "",
+    user: userId,
   });
-  const [addRestaurant, {error, data}] = useMutation(ADD_RESTAURANT);
-
-  const { userId } = useParams();
+  const [addRestaurant, { error }] = useMutation(ADD_RESTAURANT);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     if (formState.name && formState.address) {
       try {
-        console.log(formState, userId);
+        console.log(formState);
         const { data } = await addRestaurant({
-        variables: {...formState, user: userId}
-      });
-      console.log(data);
-      setShowForm(!showForm);
-    } catch (err) {
-      alert('Oops! Something went wrong');
-    }
+          variables: { ...formState },
+        });
+        console.log(data);
+        setShowForm(!showForm);
+        setFormState({
+          name: '',
+          address: ''
+        })
+      } catch (err) {
+        console.log(err);
+      }
     } else {
-      alert('Name and address required to create a restaurant');
+      alert("Name and address required to create a restaurant");
     }
   };
 
@@ -61,14 +66,14 @@ function MyRestaurants() {
             </div>
             <div className="restFormDiv">
               <span className="inputLabel">Restaurant Address: </span>
-            <input
-              className="inputBox"
-              placeholder="Restaurant Address"
-              name="address"
-              type="address"
-              value={formState.address}
-              onChange={handleChange}
-            ></input>
+              <input
+                className="inputBox"
+                placeholder="Restaurant Address"
+                name="address"
+                type="address"
+                value={formState.address}
+                onChange={handleChange}
+              ></input>
             </div>
             <button className="formSubmitBtn" type="submit">
               Create Restaurant

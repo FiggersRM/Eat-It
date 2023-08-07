@@ -29,7 +29,9 @@ export const ADD_RESTAURANT = gql`
     addRestaurant(name: $name, address: $address, user: $user) {
       name
       address
-      user
+      user {
+        _id
+      }
     }
   }
 `;
