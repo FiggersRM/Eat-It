@@ -63,7 +63,8 @@ type Mutation {
     ): User
     addRestaurant(
         name: String!
-        address: String
+        address: String!
+        user: ID!
     ): Restaurant
     addMenu(
         restaurantID: ID!
