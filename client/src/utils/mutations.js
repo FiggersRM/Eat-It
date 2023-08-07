@@ -25,12 +25,11 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
 `;
 
 export const ADD_RESTAURANT = gql`
-  mutation addRestaurant($name: String!, $address: String!) {
-    addRestaurant($name: String!, $address: String!) {
-      restaurant {
-        name
-        address
-      }
+  mutation addRestaurant($name: String!, $address: String!, $user: ID!) {
+    addRestaurant(name: $name, address: $address, user: $user) {
+      name
+      address
+      user
     }
   }
 `;

@@ -53,7 +53,8 @@ const resolvers = {
       )
     },
     addRestaurant: async (parent, args) => {
-      const restaurant = await Restaurant.create(args)
+      console.log(args);
+      const restaurant = await Restaurant.create(args);
       return restaurant
     },
     addMenu: async (parent, args) => {

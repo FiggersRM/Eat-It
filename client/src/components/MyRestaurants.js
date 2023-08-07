@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-
-import { QUERY_SINGLE_USER } from "../utils/queries";
+import { ADD_RESTAURANT } from '../utils/mutations';
 import { useParams } from "react-router-dom";
+import { useMutation } from "@apollo/client";
 
 function MyRestaurants() {
   const [showForm, setShowForm] = useState(false);
@@ -10,12 +10,27 @@ function MyRestaurants() {
     name: "",
     address: "",
   });
+  const [addRestaurant, {error, data}] = useMutation(ADD_RESTAURANT);
 
   const { userId } = useParams();
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
+
+    if (formState.name && formState.address) {
+      try {
+        console.log(formState, userId);
+        const { data } = await addRestaurant({
+        variables: {...formState, user: userId}
+      });
+      console.log(data);
+      setShowForm(!showForm);
+    } catch (err) {
+      alert('Oops! Something went wrong');
+    }
+    } else {
+      alert('Name and address required to create a restaurant');
+    }
   };
 
   const handleChange = (event) => {
