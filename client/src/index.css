@@ -34,7 +34,7 @@ code {
 .homeHeader {
   font-family: 'Fira Sans', sans-serif;
   color: #073b3a;
-  position: absolute;
+  /* position: absolute; */
   text-align: center;
   margin: 0 auto;
   width: 100%;
@@ -42,9 +42,46 @@ code {
   background-color: #ffffff;
   margin-bottom: 15px;
   color: #31C48D;
+  margin-bottom: 30px;
 }
 
+.restHeader {
+  font-family: 'Fira Sans', sans-serif;
+  color: #073b3a;
+  /* position: absolute; */
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #ffffff;
+  margin-bottom: 15px;
+  color: #31C48D;
+  margin-bottom: 30px;
+  font-size: 200%;
+}
 
+.restAddress {
+  font-family: 'Fira Sans', sans-serif;
+  color: gray;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #ffffff;
+  margin-bottom: 15px;
+  margin-bottom: 30px;
+  font-size: 150%;
+}
+
+.restContainer {
+  text-align: center;
+  margin: auto;
+}
+
+.restLoading{
+  margin: auto;
+  text-align: center;
+}
 
 .navbar {
   display: flex;
@@ -89,6 +126,7 @@ code {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .restaurantCard {
@@ -97,7 +135,7 @@ code {
   justify-content: center;
   border: 2px solid #31C48D;
   width: 234px;
-  height: 20%;
+  height: 20vh;
   text-align: center;
   border-radius: 5px;
   padding: 5px;
@@ -108,6 +146,7 @@ code {
 
 .restCardLink {
   font-size: 150%;
+  width: 100%;
   text-decoration: none;
   color: gray;
 }
@@ -118,15 +157,18 @@ code {
 
 .restCardp {
   text-overflow: ellipsis;
+  width: 100%;
   overflow: hidden;
+  display: block;
 }
 
 .restCardBtn {
-  width: 50%;
+  width: 80%;
   font-size: 125%;
   border: none;
   background-color: #81dab9;
   height: 30px;
+  align-items: center;
   border-radius: 5px;
   text-decoration: none;
   color: black;

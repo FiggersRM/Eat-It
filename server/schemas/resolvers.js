@@ -10,12 +10,17 @@ const resolvers = {
       return await User.findOne({ _id: userId });
     },
     // find all restaurants
-    restaurants: async (parents, args) => {
-      return await Restaurant.find({}).populate('menu')
+    restaurants: async () => {
+      console.log('here');
+      return await Restaurant.find({}).populate('menu');
     },
     //find one restaurant
-    restaurant: async (parent, args) => {
-        return await Restaurant.findOne({ _id: args.id }).populate('menu');
+    restaurant: async (parent, {restaurantId}) => {
+        return await Restaurant.findOne({ _id: restaurantId }).populate('menu');
+    },
+    // find restaurants associated with one user
+    userRestaurant: async (parent, args) => {
+        return await Restaurant.find({ user: args.userId });
     },
     // find one menu item
     menu: async (parent, args) => {
@@ -52,14 +57,14 @@ const resolvers = {
         { new: true }
       )
     },
-    addRestaurant: async (parent, args) => {
-      console.log(args);
-      const restaurant = await Restaurant.create(args);
-      return restaurant
+    addRestaurant: async (parent, {name, address, user}) => {
+      console.log('abc');
+      const restaurant = await Restaurant.create({name: name, address, user});
+      return restaurant;
     },
     addMenu: async (parent, args) => {
       const menu = await Menu.create(args)
-      return menu
+      return menu;
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });

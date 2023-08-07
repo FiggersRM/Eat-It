@@ -6,8 +6,12 @@ import HomeBtn from "../components/HomeBtn";
 import {QUERY_RESTAURANTS} from '../utils/queries';
 
 function RestaurantCards() {
-  const {loading, data} = useQuery(QUERY_RESTAURANTS);
+  const {loading, data, error} = useQuery(QUERY_RESTAURANTS);
   const restaurants = data?.restaurants || [];
+
+  if(error) {
+    console.log(error);
+  }
 
   return (
     <div className="restCardCont">
@@ -15,6 +19,7 @@ function RestaurantCards() {
             <div>Loading...</div>
         ) : (
           <>
+          {console.log(restaurants)}
           {restaurants.map((restaurant) => {
             return (
         <div className="restaurantCard">
@@ -23,10 +28,10 @@ function RestaurantCards() {
           {restaurant.name}
         </a>
         <p className="restCardp">
-          {restaurant.description}
+          {restaurant.address}
         </p>
-        <HomeBtn as={Link} to="/">
-          Order Now
+        <HomeBtn as={Link} to={`/restaurant/${restaurant._id}`}>
+          View Restaurant
         </HomeBtn>
       </div>
       
